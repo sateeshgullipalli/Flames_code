@@ -1,9 +1,16 @@
-#!/usr/bin/env python
-# coding: utf-8
+### Function that returns the count of unmatched letters from both the names 
+def dis_count(name3,name4):
+    while(len(set(name3)&set(name4)) != 0):
+        for i in range(len(name3)):
+                for j in range(len(name4)):
+                    if(i < len(name3) and j < len(name4)):
+                        if name3[i]== name4[j]:
+                            name3.pop(i)
+                            name4.pop(j)
+    return len(name3)+len(name4)
 
-# In[450]:
 
-
+### Function that calculates the final Letter 
 def flames1(magic):
     final = ['F','L','A','M','E','S']
     counter = magic
@@ -20,36 +27,15 @@ def flames1(magic):
             while(counter > len(final)):
                 counter = counter - len(final)
     return final
-    
 
 
-# In[490]:
-
-
+##Function to convert input name to array 
 def name_to_array(name):
     array = []
     for i in name:
         if i != ' ':
             array += [i]
     return array
-
-
-# In[445]:
-
-
-def dis_count(name3,name4):
-    while(len(set(name3)&set(name4)) != 0):
-        for i in range(len(name3)):
-                for j in range(len(name4)):
-                    if(i < len(name3) and j < len(name4)):
-                        if name3[i]== name4[j]:
-                            name3.pop(i)
-                            name4.pop(j)
-    return len(name3)+len(name4)
-
-
-# In[493]:
-
 
 name1 = input("Enter Name1: ")
 name2 = input("Enter Name2: ")
